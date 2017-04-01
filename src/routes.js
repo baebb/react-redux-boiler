@@ -1,13 +1,13 @@
 import React from 'react';
-import {Route, Router, IndexRoute} from 'react-router';
+import {Route, IndexRoute} from 'react-router';
 
-import App from './containers/app';
+import About from './containers/about';
 import Home from './containers/home';
 
 export default (
-  <Router>
-    <Route path="/" component={App}>
-      <IndexRoute component={Home}/>
-    </Route>
-  </Router>
+  <div>
+    <h1>Boilerplate app!</h1>
+    <Route exact path="/" component={Home}/>
+    <Route path="/about" component={About}/>
+  </div>
 )

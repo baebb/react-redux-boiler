@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
-import {Router, browserHistory} from 'react-router';
+import {createBrowserHistory} from 'history';
+import {routerMiddleware, ConnectedRouter, syncHistoryWithStore} from 'react-router-redux';
 import Thunk from 'redux-thunk';
 
 import Routes from './routes';
 import reducers from './reducers';
 
+const history = createBrowserHistory();
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const middleware = [Thunk];
+const middleware = [Thunk, routerMiddleware(history)];
 
 const store = createStore(reducers, composeEnhancers(
   applyMiddleware(...middleware)
@@ -17,6 +19,6 @@ const store = createStore(reducers, composeEnhancers(
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory} routes={Routes}/>
+    <ConnectedRouter history={history} children={Routes} />
   </Provider>
   , document.querySelector('.app-container'));

@@ -2,14 +2,14 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 
-class Home extends React.Component {
+class About extends React.Component {
   render() {
     return (
       <div>
-        <p>Index route!</p>
+        <p>About something</p>
       </div>
     )
   }
 }
 
-export default connect()(Home);
+export default connect()(About);
