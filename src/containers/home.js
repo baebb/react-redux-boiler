@@ -6,7 +6,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <p>Index route!</p>
+        <p>Hi fam</p>
       </div>
     )
   }

@@ -6,6 +6,7 @@ import {createBrowserHistory} from 'history';
 import {routerMiddleware, ConnectedRouter, syncHistoryWithStore} from 'react-router-redux';
 import Thunk from 'redux-thunk';
 
+import './scss/app.scss';
 import Routes from './routes';
 import reducers from './reducers';
 

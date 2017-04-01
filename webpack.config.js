@@ -1,11 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const nodeEnv = process.env.NODE_ENV || 'development';
 
 const sourcePath = path.join(__dirname);
-const jsSourcePath = path.join(__dirname, './src');
+const appPath = path.join(__dirname, './src');
 const buildPath = path.join(__dirname, './build');
 const imgPath = path.join(__dirname, './img');
 
@@ -13,23 +16,23 @@ const imgPath = path.join(__dirname, './img');
 const plugins = [
   new webpack.DefinePlugin({
     'process.env': {
-      NODE_ENV: JSON.stringify(nodeEnv),
-    },
+      NODE_ENV: JSON.stringify(nodeEnv)
+    }
   }),
   new webpack.NamedModulesPlugin(),
-  // new webpack.LoaderOptionsPlugin({
-  //   options: {
-  //     postcss: [
-  //       autoprefixer({
-  //         browsers: [
-  //           'last 3 version',
-  //           'ie >= 10',
-  //         ],
-  //       }),
-  //     ],
-  //     context: sourcePath,
-  //   },
-  // }),
+  new webpack.LoaderOptionsPlugin({
+    options: {
+      postcss: [
+        autoprefixer({
+          browsers: [
+            'last 3 version',
+            'ie >= 10'
+          ]
+        })
+      ],
+      context: sourcePath
+    }
+  })
 ];
 
 // Common rules
@@ -38,29 +41,59 @@ const rules = [
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
     use: [
-      'babel-loader',
-    ],
-  },
-  {
-    test: /\.(png|gif|jpg|svg)$/,
-    include: imgPath,
-    use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
-  },
+      'babel-loader'
+    ]
+  }
 ];
 
-if(nodeEnv == 'production') {
+if (nodeEnv == 'production') {
+  // Production plugins
   plugins.push(
+    new webpack.LoaderOptionsPlugin({
+      minimize: true,
+      debug: false
+    }),
+    new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
-      template: path.join(sourcePath, 'index.html'),
+      template: path.join(appPath, 'index.html'),
       path: buildPath,
-      filename: 'index.html',
-    })
-  )
+      filename: 'index.html'
+    }),
+    new ExtractTextPlugin('style-[hash].css')
+  );
+  // Production rules
+  rules.push(
+    {
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: 'css-loader!postcss-loader!sass-loader'
+      })
+    }
+  );
 } else {
+  // Development plugins
+  plugins.push(
+    new webpack.HotModuleReplacementPlugin()
+  );
+  // Development rules
+  rules.push(
+    {
+      test: /\.scss$/,
+      exclude: /node_modules/,
+      use: [
+        'style-loader',
+        'css-loader?sourceMap',
+        'postcss-loader',
+        'sass-loader?sourceMap'
+      ]
+    }
+  );
   
 }
 
 module.exports = {
+  devtool: nodeEnv == 'production' ? 'eval' : 'source-map',
   entry: [
     './src/index.js'
   ],
@@ -70,31 +103,19 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: [
-          'babel-loader',
-        ],
-      },
-      {
-        test: /\.(png|gif|jpg|svg)$/,
-        include: imgPath,
-        use: 'url-loader?limit=20480&name=assets/[name]-[hash].[ext]',
-      },
-    ]
+    rules
   },
   resolve: {
     extensions: ['.js', '.jsx'],
     modules: [
       path.resolve(sourcePath, 'node_modules'),
-      jsSourcePath,
+      appPath
     ],
   },
   plugins,
   devServer: {
     historyApiFallback: true,
-    contentBase: './'
+    contentBase: nodeEnv == 'production' ? './build' : './src',
+    compress: true,
   }
 };
