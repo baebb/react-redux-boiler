@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --progress --inline --hot",
-    "build-prod": "webpack -p --define process.env.NODE_ENV='\"production\"' --progress --colors",
+    "build": "rm -rf ./build && NODE_ENV=\"production\" webpack --optimize-minimize --progress --colors",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -18,6 +18,7 @@
     "babel-preset-react": "^6.22.0",
     "chai": "^3.5.0",
     "chai-jquery": "^2.0.0",
+    "html-webpack-plugin": "^2.28.0",
     "jquery": "^3.1.1",
     "jsdom": "^9.10.0",
     "mocha": "^3.2.0",
