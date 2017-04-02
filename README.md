@@ -2,8 +2,6 @@
 
 ### Install
 ```sh
-git clone https://github.com/justrossthings/gumtree-react-ssr.git
-cd gumtree-react-ssr
 npm install
 ```
 
