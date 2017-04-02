@@ -6,7 +6,7 @@ import Home from './containers/home';
 
 export default (
   <div>
-    <h1>Boilerplate app!</h1>
+    <h1>react-redux-boiler</h1>
     <Route exact path="/" component={Home}/>
     <Route path="/about" component={About}/>
   </div>
