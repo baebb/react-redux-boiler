@@ -1,9 +1,28 @@
-# react-boiler
+# react-redux-boiler
 
-Building and making edits:
+### Install
+```sh
+git clone https://github.com/justrossthings/gumtree-react-ssr.git
+cd gumtree-react-ssr
+npm install
+```
 
-1. npm install
-2. npm run test:watch
-3. (new terminal) npm start
+### Test app on dev server
+```sh
+npm start
+```
+Dev app will be up on localhost:8080 and any changes will update the app
 
-App will be up on :8080 and any changes you make in /src will render on save
+
+### Build app
+```sh
+npm run build
+```
+Builds a production-ready app in ./build
+
+
+### Host app (app must have been built)
+```sh
+npm run build-serve
+```
+The built production app will be hosted on localhost:8079
