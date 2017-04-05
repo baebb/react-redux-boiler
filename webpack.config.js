@@ -125,7 +125,7 @@ if (nodeEnv == 'production') {
 }
 
 module.exports = {
-  devtool: nodeEnv == 'production' ? 'cheap-module-source-map' : 'eval',
+  devtool: nodeEnv == 'production' ? 'source-map' : 'eval',
   entry: [
     './src/index.js'
   ],
