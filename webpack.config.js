@@ -77,7 +77,16 @@ if (nodeEnv == 'production') {
       minimize: true,
       debug: false
     }),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      comments: false,
+      compress: {
+        screw_ie8: true,
+        unused: true,
+        dead_code: true,
+        warnings: false
+      }
+    }),
     new HtmlWebpackPlugin({
       template: path.join(appPath, 'index.html'),
       path: buildPath,
@@ -116,13 +125,14 @@ if (nodeEnv == 'production') {
 }
 
 module.exports = {
-  devtool: nodeEnv == 'production' ? 'eval' : 'source-map',
+  devtool: nodeEnv == 'production' ? 'cheap-module-source-map' : 'eval',
   entry: [
     './src/index.js'
   ],
   output: {
     path: buildPath,
     publicPath: '/',
+    sourceMapFilename: '[file].map',
     filename: 'bundle.js'
   },
   module: {
