@@ -107,7 +107,12 @@ if (nodeEnv == 'production') {
 } else {
   // Development plugins
   plugins.push(
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: path.join(appPath, 'index.html'),
+      path: appPath,
+      filename: 'index.html'
+    })
   );
   // Development rules
   rules.push(
