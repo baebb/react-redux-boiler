@@ -1,7 +1,7 @@
 {
   "name": "react-redux-boiler",
-  "version": "1.0.0",
-  "description": "React + redux boilerplate code",
+  "version": "0.2.0",
+  "description": "Simple React Redux app boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --progress --inline",
