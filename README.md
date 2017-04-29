@@ -18,11 +18,11 @@
 
  - 🔥 [Firebase](firebase.google.com) for hyper-simple app deployment hosting, authentication, & backend
 
-##Feedback
+## Feedback
 
 Think this boilerplate could be better? Open an issue, make a pull request, or just holla on: iam (at) rossdyson.com 
 
-##Usage
+## Usage
 
 ### Install dependencies
 ```sh
