@@ -38,13 +38,13 @@ Dev app will be up on localhost:8080 and any changes to files inside /src will a
 
 ### Build app
 ```sh
-npm run build
+npm run build:production
 ```
 Builds a production-ready app in ./build
 
 
 ### Host built app (must have been built)
 ```sh
-npm run build-serve
+npm run build:serve
 ```
 The built production app will be hosted on localhost:8079

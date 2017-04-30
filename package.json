@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server -d --progress --inline",
-    "build": "rm -rf ./build && NODE_ENV=\"production\" webpack --progress --colors",
-    "build-serve": "http-server ./build -p 8079",
+    "build:production": "rm -rf ./build && NODE_ENV=\"production\" webpack --progress --colors",
+    "build:serve": "http-server ./build -p 8079",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test --watch"
   },
@@ -39,7 +39,6 @@
   },
   "dependencies": {
     "axios": "^0.15.3",
-    "babel-preset-stage-1": "^6.22.0",
     "bootstrap-sass": "^3.3.7",
     "history": "^4.6.1",
     "lodash": "^4.17.4",

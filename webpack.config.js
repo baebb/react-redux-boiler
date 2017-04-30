@@ -89,6 +89,7 @@ if (nodeEnv == 'production') {
     }),
     new HtmlWebpackPlugin({
       template: path.join(appPath, 'index.html'),
+      favicon: path.join(appPath, 'favicon.ico'),
       path: buildPath,
       filename: 'index.html'
     }),
@@ -110,6 +111,7 @@ if (nodeEnv == 'production') {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: path.join(appPath, 'index.html'),
+      favicon: path.join(appPath, 'favicon.ico'),
       path: appPath,
       filename: 'index.html'
     })
