@@ -8,7 +8,7 @@ class Home extends React.Component {
       <Grid>
         <Row>
           <Col xs={12} sm={6} smOffset={3}>
-            <h1 className="text-center">react-redux-boiler</h1>
+            <h1 className="text-center">Home</h1>
           </Col>
         </Row>
       </Grid>
