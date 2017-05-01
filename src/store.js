@@ -9,7 +9,10 @@ const routes = {
   },
   '/about': {
     title: 'About',
-  }
+  },
+	'/count': {
+		title: 'Count',
+	}
 };
 
 const {reducer, middleware, enhancer} = routerForBrowser({routes});
