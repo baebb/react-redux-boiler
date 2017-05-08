@@ -45,11 +45,6 @@ class Home extends React.Component {
 										</InputGroup>
 									</FormGroup>
 								</form>
-								{/*<Button*/}
-								{/*onClick={() => this.props.dispatch(navigateCount(3))}*/}
-								{/*>*/}
-								{/*Count to 3*/}
-								{/*</Button>*/}
 							</div>
 							<div>
 								<Button

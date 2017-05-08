@@ -1,7 +1,5 @@
 import {PUSH} from 'redux-little-router';
 
-export const NAVIGATE_ABOUT = 'NAVIGATE_ABOUT';
-
 export function navigateAbout() {
 	return {
 		type: PUSH,
@@ -18,7 +16,10 @@ export function navigateCount(number) {
 	return {
 		type: PUSH,
 		payload: {
-			pathname: `/count?number=${number}`
+			pathname: `/count?number=${number}`,
+			query: {
+				number: number
+			}
 		}
 	}
 }
