@@ -4,7 +4,7 @@ import {Grid, Row, Col, Button} from 'react-bootstrap';
 import {Link} from 'redux-little-router';
 
 
-class Count extends React.Component {
+class Query extends React.Component {
 	constructor(props) {
 		super(props);
 	}
@@ -15,8 +15,8 @@ class Count extends React.Component {
 				<Row>
 					<Col xs={12} sm={6} smOffset={3}>
 						<div className="text-center">
-							<h1>Count</h1>
-							<h4 className="big-number">{this.props.number}</h4>
+							<h1>Query</h1>
+							<h4 className="big-number">{this.props.string}</h4>
 							<Link href="/">
 								<Button>Home</Button>
 							</Link>
@@ -30,8 +30,8 @@ class Count extends React.Component {
 
 function mapStateToProps(state) {
 	return {
-		number: state.router.query.number
+		string: state.router.query.string
 	}
 }
 
-export default connect(mapStateToProps, null)(Count);
+export default connect(mapStateToProps, null)(Query);

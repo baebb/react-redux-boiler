@@ -10,8 +10,8 @@ const routes = {
   '/about': {
     title: 'About',
   },
-	'/count': {
-		title: 'Count',
+	'/query': {
+		title: 'Query',
 	}
 };
 

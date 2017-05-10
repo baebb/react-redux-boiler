@@ -1,25 +1,20 @@
-import {PUSH} from 'redux-little-router';
+import {push} from 'redux-little-router';
 
 export function navigateAbout() {
-	return {
-		type: PUSH,
-		payload: {
-			pathname: '/about?ayy=lmao',
-			// query: {
-			// 	ayy: 'lmao'
-			// }
-		}
-	}
+  return (dispatch) => {
+    dispatch(push('/about'))
+  }
 }
 
-export function navigateCount(number) {
-	return {
-		type: PUSH,
-		payload: {
-			pathname: `/count?number=${number}`,
-			query: {
-				number: number
-			}
-		}
-	}
+export function navigateQuery(string) {
+  return (dispatch) => {
+    dispatch(
+      push({
+        pathname: `/query`,
+        query: {
+          string: string
+        }
+      })
+    )
+  }
 }

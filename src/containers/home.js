@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {Grid, Row, Col, Button, FormGroup, InputGroup, FormControl} from 'react-bootstrap';
 import {Link} from 'redux-little-router';
 
-import {navigateAbout, navigateCount} from '../actions/index';
+import {navigateAbout, navigateQuery} from '../actions/index';
 
 class Home extends React.Component {
 	constructor(props) {
@@ -23,7 +23,8 @@ class Home extends React.Component {
 				<Row>
 					<Col xs={12} sm={6} smOffset={3}>
 						<div className="text-center">
-							<h1 className="text-center">Home</h1>
+							<h1>Home</h1>
+							<br/><br/>
 							<div>
 								<form>
 									<FormGroup>
@@ -37,7 +38,7 @@ class Home extends React.Component {
 											/>
 											<InputGroup.Button>
 												<Button
-													onClick={() => this.props.dispatch(navigateCount(this.state.value))}
+													onClick={() => this.props.dispatch(navigateQuery(this.state.value))}
 												>
 													Go
 												</Button>
@@ -46,6 +47,7 @@ class Home extends React.Component {
 									</FormGroup>
 								</form>
 							</div>
+							<br/><br/>
 							<div>
 								<Button
 									onClick={() => this.props.dispatch(navigateAbout())}
