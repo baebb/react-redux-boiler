@@ -47,8 +47,6 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
-    "react-router": "^4.0.0",
-    "react-router-redux": "^5.0.0-alpha.4",
     "redux": "^3.6.0",
     "redux-little-router": "^13.1.2",
     "redux-thunk": "^2.2.0"
