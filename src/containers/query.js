@@ -15,8 +15,11 @@ class Query extends React.Component {
 				<Row>
 					<Col xs={12} sm={6} smOffset={3}>
 						<div className="text-center">
-							<h1>Query</h1>
+							<h2>Query</h2>
+							<br/><br/>
+              <p>Your string was:</p>
 							<h4 className="big-number">{this.props.string}</h4>
+              <br/><br/>
 							<Link href="/">
 								<Button>Home</Button>
 							</Link>

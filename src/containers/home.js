@@ -23,7 +23,7 @@ class Home extends React.Component {
 				<Row>
 					<Col xs={12} sm={6} smOffset={3}>
 						<div className="text-center">
-							<h1>Home</h1>
+							<h2>Home</h2>
 							<br/><br/>
 							<div>
 								<form>
@@ -33,7 +33,7 @@ class Home extends React.Component {
 											<FormControl
 												type="text"
 												value={this.state.value}
-												placeholder="Enter number"
+												placeholder="Enter a string"
 												onChange={this.handleChange.bind(this)}
 											/>
 											<InputGroup.Button>
