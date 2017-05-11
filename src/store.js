@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import {routerForBrowser} from 'redux-little-router';
 
 import rootReducer from './reducers';
+
 const routes = {
   '/': {
     title: 'Home',
@@ -28,8 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default function configureStore(initialState) {
   return createStore(
-    
-    combineReducers({router: reducer}),
+    combineReducers({router:reducer, rootReducer}),
     initialState,
     compose(enhancer, ...composedMiddleware)
   )
