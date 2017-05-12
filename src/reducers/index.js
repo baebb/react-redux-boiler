@@ -1,8 +1,9 @@
 import {combineReducers} from 'redux';
-import { routerReducer } from 'react-router-redux';
+
+import queryReducer from './reducer_queries';
 
 const rootReducer = combineReducers({
-  routing: routerReducer
+  queries: queryReducer
 });
 
 export default rootReducer;

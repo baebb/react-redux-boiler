@@ -4,7 +4,7 @@
   "description": "Simple React Redux app boilerplate",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server -d --progress --inline",
+    "start": "webpack-dev-server -d --progress --inline --port 9999",
     "build:production": "rm -rf ./build && NODE_ENV=\"production\" webpack --progress --colors",
     "build:serve": "http-server ./build -p 8079",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
@@ -47,9 +47,8 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
-    "react-router": "^4.0.0",
-    "react-router-redux": "^5.0.0-alpha.4",
     "redux": "^3.6.0",
+    "redux-little-router": "^13.1.2",
     "redux-thunk": "^2.2.0"
   }
 }
