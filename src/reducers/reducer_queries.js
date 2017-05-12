@@ -1,16 +1,15 @@
-// import {GET_CONTENT} from '../actions/index';
+import {STORE_QUERY} from '../actions/index';
 
-const INIT_STATE = {pastQueries: []};
+const INIT_STATE = {queryStore: []};
 
 export default function (state = INIT_STATE, action) {
   // console.log(action.payload);
   switch(action.type) {
-    // case GET_CONTENT:
-    //   return {
-    //     ...state,
-    //     currentContentTitle: action.payload.title,
-    //     currentContent: action.payload.content
-    //   };
+    case STORE_QUERY:
+      return {
+        ...state,
+        queryStore: [...state.queryStore, action.payload],
+      };
     default:
       return state;
   }

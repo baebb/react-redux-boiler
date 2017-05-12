@@ -1,18 +1,22 @@
 # react-redux-boiler
 
-**Super simple react-redux boilerplate with just enough goodies to easily develop (and build!) your cool app™, and nothing more ☺️**
+**Super-simple react-redux boilerplate with enough useful goodies to develop [and build!] your cool app™, and nothing more ☺️**
 
-- 🤖 Write next-generation javascript (eg. ES6) compatible with most browsers with [Babel](https://babeljs.io/)
+## Installed packages
 
-- 💪 Leverage webpack for easy development and [webpack-html-plugin](https://github.com/jantimon/html-webpack-plugin) will build production-ready cache-busting assets
+- 💪 Leverage webpack for easy development
 
-- 🏗 Build intelligent components in no time with [react-bootstrap](https://react-bootstrap.github.io)
+- ⌚️ Build intelligent components in no time with [react-bootstrap](https://react-bootstrap.github.io)
 
-- 🚦 Navigate to routes via redux actions and sync them to your store with [react-router-redux](https://github.com/reactjs/react-router-redux)
+- 🚦 Navigate to routes via actions and sync them to your store with [redux-little-router](https://github.com/FormidableLabs/redux-little-router)
 
-- 👯 Get sassy with your css using [sass-loader](https://github.com/webpack-contrib/sass-loader)
+- 👯 Get sassy with your css with [sass-loader](https://github.com/webpack-contrib/sass-loader)
 
 - 👨 Show your grandpa on internet explorer your app with [Autoprefixer](https://github.com/postcss/autoprefixer)
+
+- 🤖 Write next-gen javascript (ES6+) and stay cross-browser compatible with [Babel](https://babeljs.io/)
+
+- 🏗 Build production-ready cache-busting assets with [webpack-html-plugin](https://github.com/jantimon/html-webpack-plugin)
 
 ## Also recommended
 
@@ -33,7 +37,7 @@ npm install
 ```sh
 npm start
 ```
-Dev app will be up on localhost:8080 and any changes to files inside /src will automagically update the app ✨
+Dev app will be up on localhost:9999 and any changes to files inside /src will automagically update the app ✨
 
 
 ### Build app
