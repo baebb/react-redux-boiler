@@ -6,20 +6,20 @@ import rootReducer from './reducers';
 
 const routes = {
   '/': {
-    title: 'Home',
+    title: 'Home'
   },
   '/about': {
-    title: 'About',
+    title: 'About'
   },
-	'/query': {
-		title: 'Query',
-	}
+  '/query': {
+    title: 'Query'
+  }
 };
 
 const {reducer, middleware, enhancer} = routerForBrowser({routes});
 
 const composedMiddleware = [
-  applyMiddleware(thunk, middleware),
+  applyMiddleware(thunk, middleware)
 ];
 
 if (process.env.NODE_ENV !== 'production') {
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default function configureStore(initialState) {
   return createStore(
-    combineReducers({router:reducer, rootReducer}),
+    combineReducers({router: reducer, rootReducer}),
     initialState,
     compose(enhancer, ...composedMiddleware)
   )
