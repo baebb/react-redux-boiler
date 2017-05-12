@@ -45,6 +45,11 @@ const rules = [
     ]
   },
   {
+    test: /\.(js|jsx)$/,
+    loader: 'eslint-loader',
+    exclude: /node_modules/,
+  },
+  {
     test: /\.png$/,
     loader: "url-loader?limit=100000"
   },
