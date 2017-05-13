@@ -16,6 +16,8 @@
 
 - 🤖 Write next-gen javascript (ES6+) and stay cross-browser compatible with [Babel](https://babeljs.io/)
 
+- 🚿 Write *clean* and *consistent* next-gen js with [ESLint](http://eslint.org/)
+
 - 🏗 Build production-ready cache-busting assets with [webpack-html-plugin](https://github.com/jantimon/html-webpack-plugin)
 
 ## Also recommended
