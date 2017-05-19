@@ -1,6 +1,6 @@
-import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
+import { createStore, applyMiddleware, compose, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import {routerForBrowser} from 'redux-little-router';
+import { routerForBrowser } from 'redux-little-router';
 
 import rootReducer from './reducers';
 
@@ -16,7 +16,7 @@ const routes = {
   }
 };
 
-const {reducer, middleware, enhancer} = routerForBrowser({routes});
+const { reducer, middleware, enhancer } = routerForBrowser({ routes });
 
 const composedMiddleware = [
   applyMiddleware(thunk, middleware)
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV !== 'production') {
 
 export default function configureStore(initialState) {
   return createStore(
-    combineReducers({router: reducer, rootReducer}),
+    combineReducers({ router: reducer, rootReducer }),
     initialState,
     compose(enhancer, ...composedMiddleware)
   )

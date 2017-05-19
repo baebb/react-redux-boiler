@@ -9,8 +9,9 @@ module.exports = {
   ],
   "rules": {
     //write your rules here!
-    "comma-dangle": [2, "never"],
-    "quotes": [2, "single", { "allowTemplateLiterals": true }],
-    "indent": ["warn", 2, { "SwitchCase": 1 }]
+    "comma-dangle": ["error", "only-multiline"],
+    "quotes": ["error", "single", { "allowTemplateLiterals": true }],
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "object-curly-spacing": ["error", "always"]
   }
 };

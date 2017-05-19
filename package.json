@@ -9,7 +9,7 @@
     "build:serve": "http-server ./build -p 8079",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch",
-    "format": "eslint --fix src/ --ext js"
+    "format": "eslint --fix src/ test/ --ext js"
   },
   "author": "Ross Dyson iam@rossdyson.com",
   "license": "MIT",

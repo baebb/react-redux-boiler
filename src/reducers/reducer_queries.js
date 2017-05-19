@@ -1,6 +1,6 @@
-import {STORE_QUERY} from '../actions/index';
+import { STORE_QUERY } from '../actions/index';
 
-const INIT_STATE = {queryStore: []};
+const INIT_STATE = { queryStore: [] };
 
 export default function (state = INIT_STATE, action) {
   switch (action.type) {

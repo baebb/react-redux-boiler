@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app.js';
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import configureStore from './store.js';
-import {initializeCurrentLocation, RouterProvider} from 'redux-little-router';
+import { initializeCurrentLocation, RouterProvider } from 'redux-little-router';
 
 import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import './scss/app.scss';

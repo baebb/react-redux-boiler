@@ -1,6 +1,6 @@
 import React from 'react';
-import {expect} from 'chai';
-import {mount} from 'enzyme';
+import { expect } from 'chai';
+import { mount } from 'enzyme';
 import configureStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 
@@ -13,13 +13,7 @@ describe('Home' , () => {
   let component, store;
   
   beforeEach(() => {
-    store = mockStore({
-      router: {
-        query: {
-          string: 'testcat'
-        }
-      }
-    });
+    store = mockStore({});
     component = mount(<Home store={store}/>);
     // console.log(component.debug());
   });
