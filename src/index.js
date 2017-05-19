@@ -12,13 +12,13 @@ const store = configureStore();
 const initialLocation = store.getState().router;
 if (initialLocation) {
   store.dispatch(initializeCurrentLocation(initialLocation));
-};
+}
 
 ReactDOM.render(
-  <Provider store={store}>
-    <RouterProvider store={store}>
+  <RouterProvider store={store}>
+    <Provider store={store}>
       <App />
-    </RouterProvider>
-  </Provider>,
+    </Provider>
+  </RouterProvider>,
   document.querySelector('.app-container')
 );

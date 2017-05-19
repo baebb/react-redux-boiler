@@ -1,4 +1,3 @@
-import {connect} from 'react-redux';
 import React from 'react';
 import {Fragment} from 'redux-little-router';
 
@@ -21,4 +20,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null,null)(App);
+export default App;
