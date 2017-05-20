@@ -1,9 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Grid, Row, Col, Button, FormGroup, InputGroup, FormControl} from 'react-bootstrap';
-import {Link} from 'redux-little-router';
+import { connect } from 'react-redux';
+import { Grid, Row, Col, Button, FormGroup, InputGroup, FormControl } from 'react-bootstrap';
 
-import {navigateAbout, navigateQuery} from '../actions/index';
+import { navigateAbout, navigateQuery } from '../actions/index';
 
 class Home extends React.Component {
   constructor(props) {
@@ -12,11 +11,11 @@ class Home extends React.Component {
       value: ''
     }
   }
-
+  
   handleChange(e) {
-    this.setState({...this.state, value: e.target.value});
+    this.setState({ ...this.state, value: e.target.value });
   }
-
+  
   render() {
     return (
       <Grid>

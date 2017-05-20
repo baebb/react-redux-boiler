@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Grid, Row, Col, Button} from 'react-bootstrap';
-import {Link} from 'redux-little-router';
+import { connect } from 'react-redux';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'redux-little-router';
 
 
 class About extends React.Component {

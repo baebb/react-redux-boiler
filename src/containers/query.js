@@ -1,14 +1,13 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {Grid, Row, Col, Button} from 'react-bootstrap';
-import {Link} from 'redux-little-router';
-
+import { connect } from 'react-redux';
+import { Grid, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'redux-little-router';
 
 class Query extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  
   render() {
     return (
       <Grid>
@@ -17,7 +16,7 @@ class Query extends React.Component {
             <div className="text-center">
               <h2>Query</h2>
               <br/><br/>
-              <p>Your string was:</p>
+              <p className="helper">Your string was:</p>
               <h4 className="big-number">{this.props.string}</h4>
               <br/><br/>
               <Link href="/">

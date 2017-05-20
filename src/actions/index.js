@@ -1,4 +1,4 @@
-import {push} from 'redux-little-router';
+import { push } from 'redux-little-router';
 
 export const STORE_QUERY = 'STORE_QUERY';
 
@@ -15,8 +15,8 @@ export function navigateQuery(string) {
       push({
         pathname: `/query`,
         query: {
-          string: string
-        }
+          string: string,
+        },
       })
     )
   }

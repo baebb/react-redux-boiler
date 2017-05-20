@@ -1,6 +1,5 @@
-import {connect} from 'react-redux';
 import React from 'react';
-import {Fragment} from 'redux-little-router';
+import { Fragment } from 'redux-little-router';
 
 import About from './containers/about';
 import Query from './containers/query';
@@ -21,4 +20,4 @@ class App extends React.Component {
   }
 }
 
-export default connect(null,null)(App);
+export default App;
