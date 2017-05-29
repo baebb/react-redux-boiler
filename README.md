@@ -4,7 +4,7 @@
 
 ## Installed packages
 
-- 💪 Leverage [webpack 2.0](https://webpack.github.io) for easy development and builds
+- 💪 Leverage [Webpack 2.0](https://webpack.github.io) for easy development and builds
 
 - ⌚️ Build intelligent components in no time with [react-bootstrap](https://react-bootstrap.github.io)
 
@@ -22,6 +22,8 @@
 
 - 😻 Efficient and *cooler* dependency management with [Yarn](https://yarnpkg.com/) *[Note: you can still use npm if you prefer]*
 
+- ✅ [Mocha](https://mochajs.org/), [Enzyme](http://airbnb.io/enzyme/) & [chai-enzyme](https://github.com/producthunt/chai-enzyme) testing to help you sleep better at night
+
 ## Also recommended
 
  - 🔥 [Firebase](firebase.google.com) for hyper-simple app deployment hosting, authentication, & backend
@@ -37,14 +39,14 @@ Think this boilerplate could be better? Open an issue, make a pull request, or j
 yarn install
 ```
 
-### Test app on a development server
+### Build app on development server
 ```sh
 yarn run start
 ```
-Dev app will be up on localhost:9999 and any changes to files inside /src will automagically update the app ✨
+A development app will be up on localhost:9999 and any changes to files inside /src will automagically update the app ✨
 
 
-### Build app
+### Build production app
 ```sh
 yarn run build:production
 ```
@@ -62,3 +64,14 @@ The built production app will be hosted on localhost:8079
 yarn run format
 ```
 Cleans your codebase to follow the rules set in your eslintrc file. Useful for CI build tools.
+
+### Test app
+```sh
+yarn run test
+```
+Runs your tests inside ./test against your app code
+
+```sh
+yarn run test:watch
+```
+Watches your app code and re-runs tests on any changes
