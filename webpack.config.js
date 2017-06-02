@@ -103,7 +103,7 @@ if (nodeEnv == 'production') {
   // Production rules
   rules.push(
     {
-      test: /\.scss$/,
+      test: /\.(css|scss)$/,
       loader: ExtractTextPlugin.extract({
         fallback: 'style-loader',
         use: 'css-loader!postcss-loader!sass-loader'
@@ -124,7 +124,7 @@ if (nodeEnv == 'production') {
   // Development rules
   rules.push(
     {
-      test: /\.scss$/,
+      test: /\.(css|scss)$/,
       use: [
         'style-loader',
         'css-loader?sourceMap',
