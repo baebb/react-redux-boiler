@@ -144,8 +144,8 @@ module.exports = {
   output: {
     path: buildPath,
     publicPath: '/',
-    sourceMapFilename: '[file].map',
-    filename: 'bundle.js'
+    sourceMapFilename: '[file]-[hash].map',
+    filename: 'bundle-[hash].js'
   },
   module: {
     rules
