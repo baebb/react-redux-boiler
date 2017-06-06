@@ -54,8 +54,12 @@ const rules = [
     loader: "url-loader?limit=100000"
   },
   {
-    test: /\.jpg$/,
-    loader: "file-loader"
+    test: /\.(jpg|jpeg|gif)$/,
+    loader: "file-loader",
+    options: {
+      name: '[path][name]-[hash].[ext]',
+      context: appPath
+    }
   },
   {
     test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
