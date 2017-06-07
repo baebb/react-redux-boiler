@@ -28,10 +28,6 @@
 
  - 🔥 [Firebase](firebase.google.com) for hyper-simple app deployment hosting, authentication, & backend
 
-## Feedback
-
-Think this boilerplate could be better? Open an issue, make a pull request, or just holla on: iam (at) rossdyson.com 
-
 ## Usage
 
 ### Install dependencies
@@ -75,3 +71,13 @@ Runs your tests inside ./test against your app code
 yarn run test:watch
 ```
 Watches your app code and re-runs tests on any changes
+
+## Notes
+
+### FOUC (Flash of Unstyled Content)
+
+To make the hot reloading of CSS work, we are not extracting CSS in development. However, the CSS **is** extracted to a .css file in the production builds, so you can relaxthat the FOUC will not occur in your production app 😃👌
+
+## Feedback
+
+Think this boilerplate could be better? Open an issue, make a pull request, or just holla on: iam (at) rossdyson.com 
