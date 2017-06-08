@@ -33,7 +33,7 @@ class Home extends React.Component {
                         type="text"
                         value={this.state.value}
                         placeholder="Enter a string"
-                        onChange={this.handleChange.bind(this)}
+                        onChange={(e) => this.handleChange(e)}
                       />
                       <InputGroup.Button>
                         <Button
