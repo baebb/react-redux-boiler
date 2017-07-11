@@ -54,7 +54,7 @@
     "react-dom": "^15.5.4",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
-    "redux-little-router": "^13.1.2",
+    "redux-little-router": "^14.2.0",
     "redux-thunk": "^2.2.0"
   }
 }

@@ -14,6 +14,9 @@ class App extends React.Component {
           <Fragment forRoute='/'><Home /></Fragment>
           <Fragment forRoute='/about'><About /></Fragment>
           <Fragment forRoute='/query'><Query /></Fragment>
+          <Fragment forNoMatch>
+            <h2 className="text-center">404</h2>
+          </Fragment>
         </div>
       </Fragment>
     );

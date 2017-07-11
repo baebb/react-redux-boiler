@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import App from './app.js';
 import { Provider } from 'react-redux';
 import configureStore from './store.js';
-import { initializeCurrentLocation, RouterProvider } from 'redux-little-router';
+import { initializeCurrentLocation } from 'redux-little-router';
 
 import 'bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 import './scss/app.scss';
@@ -15,10 +15,8 @@ if (initialLocation) {
 }
 
 ReactDOM.render(
-  <RouterProvider store={store}>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </RouterProvider>,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.querySelector('.app-container')
 );
