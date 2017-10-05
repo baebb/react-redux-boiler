@@ -62,20 +62,12 @@ const rules = [
     }
   },
   {
-    test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'url-loader?limit=10000&mimetype=application/font-woff'
+    test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+    use: 'url-loader?limit=10000'
   },
   {
-    test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'url-loader?limit=10000&mimetype=application/octet-stream'
-  },
-  {
-    test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'file-loader'
-  },
-  {
-    test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-    loader: 'url-loader?limit=10000&mimetype=image/svg+xml'
+    test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+    use: 'file-loader'
   }
 ];
 
@@ -87,7 +79,7 @@ if (nodeEnv == 'production') {
       debug: false
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       comments: false,
       compress: {
         screw_ie8: true,
@@ -141,14 +133,13 @@ if (nodeEnv == 'production') {
 }
 
 module.exports = {
-  devtool: nodeEnv == 'production' ? 'source-map' : 'eval',
+  devtool: nodeEnv == 'production' ? 'cheap-module-source-map' : 'eval',
   entry: [
-    './src/index.js'
+    'bootstrap-loader', './src/index.js'
   ],
   output: {
     path: buildPath,
     publicPath: '/',
-    sourceMapFilename: '[file]-[hash].map',
     filename: 'bundle-[hash].js'
   },
   module: {

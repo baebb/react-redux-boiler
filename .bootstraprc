@@ -1,0 +1,72 @@
+---
+# Output debugging info
+# loglevel: debug
+
+# Major version of Bootstrap: 3 or 4
+bootstrapVersion: 3
+
+# Webpack loaders, order matters
+styleLoaders:
+  - style
+  - css
+  - sass
+
+# Different settings for different environments can be used,
+# It depends on value of NODE_ENV environment variable
+env:
+  development:
+    extractStyles: false
+  production:
+    extractStyles: true
+
+appStyles: ./src/scss/app.scss
+
+### Bootstrap styles
+styles:
+
+  # Mixins
+  mixins: true
+
+  # Reset and dependencies
+  normalize: true
+  print: false
+  glyphicons: false
+
+  # Core CSS
+  scaffolding: true
+  type: true
+  code: true
+  grid: true
+  tables: true
+  forms: true
+  buttons: true
+
+  # Components
+  component-animations: true
+  dropdowns: true
+  button-groups: true
+  input-groups: true
+  navs: true
+  navbar: true
+  breadcrumbs: true
+  pagination: true
+  pager: true
+  labels: true
+  badges: true
+  jumbotron: true
+  thumbnails: true
+  alerts: true
+  progress-bars: true
+  media: true
+  list-group: true
+  panels: true
+  wells: true
+  responsive-embed: true
+  close: true
+
+  # Utility classes
+  utilities: true
+  responsive-utilities: true
+
+### Bootstrap scripts
+scripts: false
