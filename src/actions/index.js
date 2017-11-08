@@ -2,13 +2,13 @@ import { push } from 'redux-little-router';
 
 export const STORE_QUERY = 'STORE_QUERY';
 
-export function navigateAbout() {
+const navigateAbout = () => {
   return (dispatch) => {
     dispatch(push('/about'))
   }
-}
+};
 
-export function navigateQuery(string) {
+const navigateQuery = (string) => {
   return (dispatch) => {
     dispatch(storeQuery(string));
     dispatch(
@@ -20,11 +20,17 @@ export function navigateQuery(string) {
       })
     )
   }
-}
+};
 
-export function storeQuery(query) {
+const storeQuery = (query) => {
   return {
     type: STORE_QUERY,
     payload: query
   }
+};
+
+export {
+  navigateAbout,
+  navigateQuery,
+  storeQuery
 }

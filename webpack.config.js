@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -79,14 +80,14 @@ if (nodeEnv == 'production') {
       minimize: true,
       debug: false
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: false,
-      comments: false,
-      compress: {
-        screw_ie8: true,
-        unused: true,
-        dead_code: true,
-        warnings: false
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        ie8: false,
+        ecma: 8,
+        output: {
+          comments: false,
+          beautify: false
+        }
       }
     }),
     new HtmlWebpackPlugin({
