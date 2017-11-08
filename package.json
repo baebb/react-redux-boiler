@@ -26,6 +26,7 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
     "css-loader": "^0.28.0",
+    "dotenv-webpack": "^1.5.4",
     "enzyme": "^2.8.2",
     "eslint": "^3.19.0",
     "eslint-loader": "^1.7.1",

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -115,6 +116,9 @@ if (nodeEnv == 'production') {
       favicon: path.join(appPath, 'favicon.ico'),
       path: appPath,
       filename: 'index.html'
+    }),
+    new Dotenv({
+      path: './.env'
     })
   );
   // Development rules
@@ -129,7 +133,7 @@ if (nodeEnv == 'production') {
       ]
     }
   );
-  
+
 }
 
 module.exports = {
