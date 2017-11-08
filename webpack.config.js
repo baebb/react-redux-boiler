@@ -42,9 +42,12 @@ const rules = [
   {
     test: /\.(js|jsx)$/,
     exclude: /node_modules/,
-    use: [
-      'babel-loader'
-    ]
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['env']
+      }
+    }
   },
   {
     test: /\.(js|jsx)$/,
@@ -53,11 +56,11 @@ const rules = [
   },
   {
     test: /\.png$/,
-    loader: "url-loader?limit=100000"
+    loader: 'url-loader?limit=100000'
   },
   {
     test: /\.(jpg|jpeg|gif)$/,
-    loader: "file-loader",
+    loader: 'file-loader',
     options: {
       name: '[path][name]-[hash].[ext]',
       context: appPath
